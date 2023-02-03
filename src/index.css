@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+/*这一句是用来解决在安卓上的点击出现篮框问题*/
+body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*下面是解决ios上去除微信点击蓝色边框 */
+a:focus,
+input:focus,
+p:focus,
+div:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+
+
+.main {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+}
+
+/* 木鱼棒 */
+.mubang {
+    position: absolute;
+    top: 105px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    background: url('./stick.png') no-repeat;
+    background-size: contain;
+    transform: rotate(-40deg);
+    transform-origin: 10px 70px;
+    cursor: pointer;
+}
+
+.move {
+    animation: move 0.5s linear alternate;
+}
+
+.auto_move {
+    animation: move 0.5s linear alternate infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: rotate(-40deg);
+    }
+
+    100% {
+        transform: rotate(-18deg);
+    }
+}
+
+/* 木鱼 */
+.muyu {
+    position: absolute;
+    top: 100px;
+    left: 45px;
+    width: 220px;
+    height: 220px;
+    background: url('./muyu.png') no-repeat;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.muyu:active {
+    transform: scale(0.9);
+}
+
+.music {
+    display: none;
+}
+
+/* 自动开关 */
+.control {
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.auto {
+    width: 18px;
+    height: 18px;
+}
+
+.auto_name {
+    color: white;
+    font-size: 18px;
+    padding-right: 12px;
+}
+
+/* 计数器 */
+.count {
+    width: 200px;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    padding-right: 12px;
+}
+
+.num {
+    color: #ff9607;
+    font-size: 26px;
+}
+
+#tips {
+    position: absolute;
+    visibility: hidden;
+    color: #ff9607;
+    font-size: 26px;
+    margin: 0 auto;
+    top: 100px;
+    left: 40%;
+    opacity: 0;
+    transition: top 0.6s;
+}
